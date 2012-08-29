@@ -1,10 +1,10 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require "bundler/capistrano"
 
-server "192.168.0.126", :web, :app, :db, primary: true
+server "192.168.0.109", :web, :app, :db, primary: true
 
 set :application, "test0829"
-set :user, "sammy"
+set :user, "mis"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
@@ -12,12 +12,6 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:SammyLin/#{application}.git"
 set :branch, "master"
-set :default_environment, {
-    'PATH' => "/home/sammy/.rvm/gems/ruby-1.9.3-p194/bin:/home/sammy/.rvm/:bin:$PATH",
-    'RUBY_VERSION' => 'ruby-1.9.3-p194',
-    'GEM_HOME' => '/home/sammy/.rvm/gems/ruby-1.9.3-p194',
-    'GEM_PATH' => '/home/sammy/.rvm/gems/ruby-1.9.3-p194'
-    }
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
