@@ -1,5 +1,5 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-require "rvm/capistrano"
+require "bundler/capistrano"
 
 server "192.168.0.126", :web, :app, :db, primary: true
 
@@ -12,7 +12,7 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:SammyLin/#{application}.git"
 set :branch, "master"
-set :rvm_ruby_string, '1.9.2'
+set :rvm_ruby_string, '1.9.3-p194'
 set :rvm_type, :sammy  # Don't use system-wide RVM
 
 default_run_options[:pty] = true
