@@ -12,9 +12,9 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:SammyLin/#{application}.git"
 set :branch, "master"
-set :rvm_ruby_string, '1.9.3-p194'
-set :rvm_type, :sammy  # Don't use system-wide RVM
 
+set :default_environment, { 'PATH' => "'/home/sammy/.rvm/gems/ruby-1.9.3-p194/bin/bundle
+                            /home/sammy/.rvm/gems/ruby-1.9.3-p194/bin:/home/sammy/.rvm/gems/ruby-1.9.3-p194@global/bin:/home/sammy/.rvm/rubies/ruby-1.9.3-p194/bin:/home/sammy/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games /home/sammy/.rvm/gems/ruby-1.9.3-p194/bin/bundle'" }
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
